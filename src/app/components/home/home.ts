@@ -18,4 +18,8 @@ export class Home implements OnInit {
     console.log('Hello Home');
   }
 
+  close() {
+    console.log('close');
+  }
+
 }
