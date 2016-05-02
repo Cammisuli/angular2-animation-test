@@ -1,4 +1,17 @@
-// component styles are encapsulated and only applied to their components
-* {
-  color: #FFEF00;
+// component styles are encapsulated and only applied to their component
+:host {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-flow: row;
+}
+.left {
+  background-color: red;
+  flex: 0 0 336px;
+}
+
+.right {
+  background-color: blue;
+  flex: 1 1 0px;
 }
