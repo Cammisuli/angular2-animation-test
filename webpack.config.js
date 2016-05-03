@@ -57,14 +57,14 @@ module.exports = function makeWebpackConfig() {
    */
   config.output = isTest ? {} : {
     path: root('dist'),
-    publicPath: isProd ? '/' : 'http://localhost:3000/',
+    publicPath: isProd ? '/' : 'http://localhost:8080/',
     filename: isProd ? 'js/[name].[hash].js' : 'js/[name].js',
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js'
   };
 
   
   // config.externals = {
-  //   "TweenLite":"gsap/src/uncompressed/TweenLite.js"
+  //   "TimelineLite":"TweenMax"
   // }
   
   /**
@@ -169,8 +169,8 @@ module.exports = function makeWebpackConfig() {
       }
     }),
     new webpack.ProvidePlugin({
-      TweenMax: 'gsap/src/uncompressed/TweenMax.js',
-      TimelineLite: 'gsap/src/uncompressed/TimelineLite.js'
+       //TweenMax: 'gsap/src/uncompressed/TweenMax.js'
+      //  TimelineLite: 'gsap/src/uncompressed/TimelineLite.js'
     })
   ];
 

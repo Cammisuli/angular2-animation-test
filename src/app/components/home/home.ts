@@ -22,26 +22,25 @@ export class Home implements OnInit, AfterViewInit {
 
   ngOnInit() {
     console.log('Hello Home');
-    //this.timeline = new TimelineLite();
+    this.timeline = new TimelineLite({ paused: true });
   }
 
   ngAfterViewInit() {
     //this.timeline.to(this.groupsElement.nativeElement, 2, { height: 0 });
+    setTimeout(() => {
+      this.timeline.to(this.groupsElement.nativeElement, this.aniTiming, { height: 0 }, "start")
+        .to(this.listElement.nativeElement, this.aniTiming, { width: this._el.nativeElement.clientWidth, x: '-336px' }, "start");
+    });
   }
 
   close() {
-    console.log('close');
-
-    // if (!this.closed) {
-    //   this.timeline.play();
-    //   this.closed = true;
-    // } else {
-    //   this.timeline.reverse();
-    //   this.closed = false;
-    // }
-
-    TweenMax.to(this.groupsElement.nativeElement, this.aniTiming, { height: 0, position: 'absolute' });
-    TweenMax.to(this.listElement.nativeElement, this.aniTiming, { width: this._el.nativeElement.clientWidth, x: '-336px' });
+    if (!this.closed) {
+      this.timeline.play();
+      this.closed = true;
+    } else {
+      this.timeline.reverse();
+      this.closed = false;
+    }
 
   }
 
