@@ -46,7 +46,7 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/configuration.html#entry
    */
   config.entry = isTest ? {} : {
-    'polyfills': ['es6-shim/es6-shim.js', 'angular2/bundles/angular2-polyfills'],
+    'polyfills': ['core-js/index.js', 'angular2/bundles/angular2-polyfills'],
     'vendor': './src/vendor.ts',
     'app': './src/bootstrap.ts' // our angular app
   };
@@ -57,7 +57,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.output = isTest ? {} : {
     path: root('dist'),
-    publicPath: isProd ? '/' : 'http://localhost:8080/',
+    publicPath: "/",
     filename: isProd ? 'js/[name].[hash].js' : 'js/[name].js',
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js'
   };
