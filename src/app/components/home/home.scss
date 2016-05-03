@@ -31,7 +31,7 @@ home {
   background-color: indianred;
   height: calc(100% - #{$height});
   overflow: hidden;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .search {
@@ -45,7 +45,7 @@ home {
   background-color: blue;
   height: calc(100% - #{$height});
   width: calc(100% - 336px);
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   padding: 10px;
   overflow-y: scroll;
   .grid {
@@ -58,7 +58,7 @@ home {
 
 .groups-closed {
   .device-groups {
-    height: 0;
+    height: calc(100% - 100%);
   }
   .device-list {
     transform: translateX(-336px);
