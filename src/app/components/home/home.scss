@@ -7,6 +7,7 @@ $height: 50px;
   height: 100%;
   flex-flow: row;
 }
+
 .left {
   flex: 0 0 336px;
   height: 100%;
@@ -15,21 +16,28 @@ $height: 50px;
     height: $height;
   }
   .device-groups {
-    position: relative;
+    position: absolute;
+    z-index: 1;
     display: flex;
     background-color: indianred;
     height: calc(100% - #{$height});
+    width: 336px;
     overflow: hidden;
   }
 }
 
 .right {
-  background-color: blue;
   flex: 1 1 0px;
-  
+  height: 100%;
   .search {
     height: $height;
     width: 100%;
-    background-color:green;
+    background-color: green;
+  }
+  .device-list {
+    background-color: blue;
+    position: absolute;
+    width: calc(100% - 336px);
+    height: calc(100% - #{$height});
   }
 }

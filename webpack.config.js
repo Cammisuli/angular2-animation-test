@@ -62,6 +62,11 @@ module.exports = function makeWebpackConfig() {
     chunkFilename: isProd ? '[id].[hash].chunk.js' : '[id].chunk.js'
   };
 
+  
+  // config.externals = {
+  //   "TweenLite":"gsap/src/uncompressed/TweenLite.js"
+  // }
+  
   /**
    * Resolve
    * Reference: http://webpack.github.io/docs/configuration.html#resolve
@@ -73,7 +78,8 @@ module.exports = function makeWebpackConfig() {
     extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html'],
     alias: {
       'app': 'src/app',
-      'common': 'src/common'
+      'common': 'src/common',
+      'TweenLite': 'gsap/src/uncompressed/TweenLite'
     }
   };
 
@@ -161,6 +167,10 @@ module.exports = function makeWebpackConfig() {
       'process.env': {
         ENV: JSON.stringify(ENV)
       }
+    }),
+    new webpack.ProvidePlugin({
+      TweenMax: 'gsap/src/uncompressed/TweenMax.js',
+      TimelineLite: 'gsap/src/uncompressed/TimelineLite.js'
     })
   ];
 
